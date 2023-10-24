@@ -22,7 +22,7 @@ galaxy_info:
     - letsencrypt
     - cloudflare
 
-dependencies:
-  - role: nephelaiio.plugins
-  - role: geerlingguy.repo-epel
-    when: ansible_os_family == 'RedHat'
+# dependencies:
+#   - role: nephelaiio.plugins
+#   - role: geerlingguy.repo-epel
+#     when: ansible_os_family == 'RedHat'

@@ -1,0 +1,6 @@
+- name: Restart dependent service
+  become: true
+  ansible.builtin.systemd:
+    state: restarted
+    enabled: true
+    name: "{{ acme_certificate_service_restart }}"
