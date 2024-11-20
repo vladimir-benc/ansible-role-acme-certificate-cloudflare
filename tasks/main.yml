@@ -199,6 +199,14 @@
       notify: Restart dependent service
       when: acme_certificate_keyfile is defined
 
+    - name: Change owner of certificate key file
+      ansible.builtin.file:
+        path: "{{ acme_certificate_keyfile }}"
+        owner: "{{ acme_certificate_keyfile_owner}} "
+      notify: Restart dependent service
+      when: acme_certificate_keyfile_owner is defined
+
+
     - name: Copy ca file
       ansible.builtin.copy:
         mode: preserve
